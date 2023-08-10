@@ -55,7 +55,7 @@ new_data_lease.append(d)
 
 #Sale:
 #Sequence: All sale, sale_1m, sale_1.01m-2m, ..., sale_20m_or_above, sale_0-200ft, ..., sale_1000ft_or_above, sale_studio, ..., sale_4rooms_or_more
-driver = webdriver.Chrome('/content/chromedriver', options = options)
+driver = webdriver.Chrome('/usr/bin/chromedriver', options = options)
 sale_links = ["https://hk.centanet.com/findproperty/list/buy", "https://hk.centanet.com/findproperty/list/buy?q=3463167af7", "https://hk.centanet.com/findproperty/list/buy?q=9148d10403",
               "https://hk.centanet.com/findproperty/list/buy?q=767ee297f7", "https://hk.centanet.com/findproperty/list/buy?q=4955e55325", "https://hk.centanet.com/findproperty/list/buy?q=92adc6cb7b",
               "https://hk.centanet.com/findproperty/list/buy?q=90d18dcdd5", "https://hk.centanet.com/findproperty/list/buy?q=92adc715ad", "https://hk.centanet.com/findproperty/list/buy?q=92adc73a2f",
