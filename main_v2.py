@@ -2,9 +2,11 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 from datetime import date, datetime, timedelta
+import time
 
 def get_data(url):
   driver.get(url)
+  time.sleep(2)
   data = driver.find_element_by_xpath('//*[@id="__layout"]/div/div[4]/div[6]/div/div[1]/div[1]/div/h2/span/span').text
   return data
 
@@ -53,7 +55,7 @@ new_data_lease.append(d)
 
 #Sale:
 #Sequence: All sale, sale_1m, sale_1.01m-2m, ..., sale_20m_or_above, sale_0-200ft, ..., sale_1000ft_or_above, sale_studio, ..., sale_4rooms_or_more
-driver = webdriver.Chrome('/usr/bin/chromedriver', options = options)
+driver = webdriver.Chrome('/content/chromedriver', options = options)
 sale_links = ["https://hk.centanet.com/findproperty/list/buy", "https://hk.centanet.com/findproperty/list/buy?q=3463167af7", "https://hk.centanet.com/findproperty/list/buy?q=9148d10403",
               "https://hk.centanet.com/findproperty/list/buy?q=767ee297f7", "https://hk.centanet.com/findproperty/list/buy?q=4955e55325", "https://hk.centanet.com/findproperty/list/buy?q=92adc6cb7b",
               "https://hk.centanet.com/findproperty/list/buy?q=90d18dcdd5", "https://hk.centanet.com/findproperty/list/buy?q=92adc715ad", "https://hk.centanet.com/findproperty/list/buy?q=92adc73a2f",
