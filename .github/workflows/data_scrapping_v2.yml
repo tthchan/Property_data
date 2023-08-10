@@ -1,0 +1,36 @@
+name: data_scrapping_v2
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '00 19 * * *' 
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the respository
+      uses: actions/checkout@v3
+    - name: Set up Chrome
+      uses: browser-actions/setup-chrome@v1
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - name: Download library 
+      run: pip install -r requirements.txt
+    - name: Download Chromedriver
+      run: |
+        curl -O https://chromedriver.storage.googleapis.com/$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+    - name: Run the Python code
+      run: python3 main_v2.py 中原放盤.xlsx
+    - name: auto-push to github
+      if: always()
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git config pull.rebase false
+        git add 中原放盤.xlsx
+        git diff-index --quiet HEAD || git commit -am "archived"
+        git pull origin main
+        git push
