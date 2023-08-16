@@ -1,4 +1,4 @@
-name: data_scrapping_v2
+name: web_scraping_v2
 on:
   workflow_dispatch:
   schedule:
