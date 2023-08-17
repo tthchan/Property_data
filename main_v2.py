@@ -6,7 +6,7 @@ import time
 
 def get_data(url):
   driver.get(url)
-  time.sleep(2)
+  time.sleep(5)
   data = driver.find_element_by_xpath('//*[@id="__layout"]/div/div[4]/div[6]/div/div[1]/div[1]/div/h2/span/span').text
   return data
 
