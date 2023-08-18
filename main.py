@@ -2,6 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 from datetime import date, datetime, timedelta
+import time
 
 def get_data(url):
   driver.get(url)
