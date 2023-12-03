@@ -1,4 +1,4 @@
-**Project Overview**
+#**Project Overview**
 This project is designed to automatically scrape property data from Centanet, a prominent real estate listing website in Hong Kong. Utilizing Python with Selenium and BeautifulSoup, this repository contains two versions of the script: main.py for basic scraping and main_v2.py for a more advanced approach.
 
 **Features**
